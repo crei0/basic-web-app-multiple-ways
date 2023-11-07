@@ -1,8 +1,6 @@
 import React from 'react';
-import Chart from 'chart.js/auto';
-import { Link, useParams, useNavigate } from 'react-router-dom';
 
-import { PATH, API_PATH } from '../utilities/constants';
+import { API_PATH } from '../utilities/constants';
 import './dashboard.css';
 
 function Dashboard() {
