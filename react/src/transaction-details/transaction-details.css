@@ -1,0 +1,10 @@
+#details {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	/* grid-template-rows: repeat(5, 1fr); */
+	grid-row-gap: 1rem;
+}
+
+.details-field {
+	font-weight: 700;
+}
