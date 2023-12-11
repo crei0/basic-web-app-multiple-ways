@@ -1,0 +1,29 @@
+table {
+	border: 0;
+	width: 100%;
+}
+
+thead {
+	font-weight: 700;
+}
+
+.col-aligned-right {
+	text-align: end;
+}
+
+a {
+	color: darkblue;
+	text-decoration: underline;
+}
+
+#controls {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: end;
+}
+
+#page-counter {
+	margin-inline-end: 2rem;
+}

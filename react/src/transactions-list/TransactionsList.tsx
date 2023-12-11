@@ -38,6 +38,7 @@ function TransactionsList(): React.ReactElement {
                 (result) => {
                     setIsLoaded(true);
                     setData(result);
+                    setError('');
                 },
                 (error) => {
                     setIsLoaded(true);
@@ -60,7 +61,7 @@ function TransactionsList(): React.ReactElement {
         return <div>Loading...</div>;
     }
 
-    if (listOfTransactions?.length > 0) {
+    if (listOfTransactions.length > 0) {
         return (
             <div>
                 <table>

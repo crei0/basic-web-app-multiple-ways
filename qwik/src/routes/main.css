@@ -1,0 +1,25 @@
+:root {
+  --d-padding: 2rem;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: Inter, system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+}
+
+body {
+  font-size: 1.6rem;
+  margin: var(--d-padding);
+}
+
+#root {
+  width: 100%;
+  max-width: 1024px;
+}
+
+main {
+  background-color: #eee;
+}
