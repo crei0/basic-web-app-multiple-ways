@@ -1,10 +1,10 @@
 {
-  "name": "my-qwik-basic-starter",
+  "name": "basic-web-app-multiple-ways-qwik",
   "description": "Demo App with Routing built-in (recommended)",
   "engines": {
     "node": ">=15.0.0"
   },
-  "private": true,
+  "private": false,
   "trustedDependencies": [
     "sharp"
   ],

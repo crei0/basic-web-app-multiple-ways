@@ -1,7 +1,7 @@
 # Purpose
 
 The idea was to create a simple barebones web app using multiple web Front-end frameworks, and then compare against each other
-Code quality is, on purpose not to be "perfect", it's more like if someone with some FE skills picked the framework "XYZ" then what would be the outcome
+Code quality is, on purpose not to be "perfect", it's more like if someone with some FE skills picked the framework "XYZ" and just built a simple/fast web app, then what would be the outcome of that
 Also no tests have been created
 
 # Backend

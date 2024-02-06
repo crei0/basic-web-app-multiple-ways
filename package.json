@@ -1,1 +1,11 @@
-{}
+{
+    "name": "basic-web-app-multiple-ways",
+    "version": "0.0.0",
+    "scripts": {
+      "node": "cd node-express/ && npm start",
+      "react": "cd react/ && npm start",
+      "qwik": "cd qwik/ && npm start",
+      "angular": "cd angular/ && npm start"
+    },
+    "private": false
+  }

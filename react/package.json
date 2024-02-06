@@ -1,7 +1,7 @@
 {
-  "name": "basic-web-app-multiple-ways",
-  "private": true,
-  "version": "0.0.0",
+  "name": "basic-web-app-multiple-ways-react",
+  "private": false,
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "start": "npm run dev",
