@@ -1,0 +1,17 @@
+<table>
+    <thead>
+        <tr>
+            <td>Transaction ID</td>
+            <td>State</td>
+            <td className='col-aligned-right'>Amount</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let transaction of listOfTransactions">
+            <td><a [routerLink]="[path.TRANSACTIONS, transaction.id]">{{transaction.id}}</a></td>
+            <td><app-display-transaction-state state={{transaction.state}} /></td>
+            <td className='col-aligned-right'>{{transaction.amount}} &euro;</td>
+        </tr>
+    </tbody>
+</table>
+

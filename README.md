@@ -9,13 +9,19 @@ Also no tests have been created
 Uses a NodeJs + Express to serve the mock data from a static JSON "database" using REST+JSON
 If the HTMX version is started, possibly new endpoints will be created to serve HTML partial content
 
+# Routes
 
+```
+- / (start / dashboard)
+    - /transactions
+        - /:id
+```
 # Status
 
-| Framework          | Status         |
-|--------------------|----------------|
-| React              | Completed      |
-| Qwik / QwikCity    | In progress    |
-| Angular            | To be started  |
-| Svelte / Sveltekit | To be started  |
-| HTMX?              | To be started? |
+| Framework                     | Status         |
+|-------------------------------|----------------|
+| React + Typescript + Vite     | Completed      |
+| Qwik / QwikCity               | In progress    |
+| Angular                       | To be started  |
+| Svelte / Sveltekit            | To be started  |
+| HTMX?                         | To be started? |

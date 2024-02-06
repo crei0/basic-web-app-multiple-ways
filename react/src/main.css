@@ -17,7 +17,7 @@ body {
   justify-content: center;
 }
 
-#root {
+#app-root {
   width: 100%;
   max-width: 1024px;
 }

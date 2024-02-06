@@ -1,0 +1,24 @@
+<div>
+    <a routerLink={{path.TRANSACTIONS}}>
+        Back
+    </a>
+
+    <h2>Transaction: {{data.id}}</h2>
+
+    <section id="details">
+        <div className='details-field'>State:</div>
+        <div className='details-value'><app-display-transaction-state state={{data.state} /></div>
+
+        <div className='details-field'>Amount:</div>
+        <div className='details-value'>{{data.amount}} &euro;</div>
+
+        <div className='details-field'>Date:</div>
+        <div className='details-value'>{{data.dateUnix}}</div>
+
+        <div className='details-field'>Card holder:</div>
+        <div className='details-value'>{{data.cardHolder}}</div>
+
+        <div className='details-field'>Notes:</div>
+        <div className='details-value'>{{data.notes}}</div>
+    </section>
+</div>
