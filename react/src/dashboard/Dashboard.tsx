@@ -40,7 +40,7 @@ function Dashboard() {
                 <div>
                     <h1>Dashboard</h1>
 
-                    <div className='box'>
+                    <div>
                         <div>Total transactions count:</div>
                         <div>{data.totalTransactionsCount}</div>
                     </div>

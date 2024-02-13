@@ -12,7 +12,7 @@ function TransactionsList(): React.ReactElement {
         totalTransactionsCount: 0,
         numberOfTransactionsPerPage: 5,
         listOfTransactions: []
-    }
+    };
 
     const [error, setError] = React.useState('');
     const [isLoaded, setIsLoaded] = React.useState(false);
@@ -49,7 +49,7 @@ function TransactionsList(): React.ReactElement {
 
     React.useEffect(
         () => {
-            refreshTheTable()
+            refreshTheTable();
         }, []
     );
 
@@ -90,7 +90,7 @@ function TransactionsList(): React.ReactElement {
                     <li><button onClick={() => goToPage(startFromTransactionIndex + numberOfTransactionsPerPage)}>&gt;</button></li>
                     <li><button onClick={() => goToPage(totalTransactionsCount - numberOfTransactionsPerPage)}>&gt;|</button></li>
                 </ul>
-            </div >
+            </div>
         );
     } else {
         return <div>No transactions were found</div>;
