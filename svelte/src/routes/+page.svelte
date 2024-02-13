@@ -1,15 +1,18 @@
 <script>
+	import { onMount } from 'svelte';
 	import { API_PATH } from '../lib/utilities/constants';
 	
 	let data = {
         totalTransactionsCount: 0
     };
 
-	fetch(API_PATH.DASHBOARD)
-		.then((response) => response.json())
-		.then((fetchData) => {
-			data = fetchData;
-		});
+	onMount(() => {
+		fetch(API_PATH.DASHBOARD)
+			.then((response) => response.json())
+			.then((fetchData) => {
+				data = fetchData;
+			});
+	});
 </script>
 
 <svelte:head>
@@ -19,7 +22,7 @@
 </svelte:head>
 
 <section>
-	<div>
+	<div id="dashboard">
 		<h1>Dashboard</h1>
 
 		<div>

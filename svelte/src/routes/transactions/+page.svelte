@@ -17,15 +17,9 @@
     /** @type { import("../../lib/utilities/types").Transaction[] } */
     let listOfTransactions = data.listOfTransactions;
 
-    let {
-        startFromTransactionIndex,
-        totalTransactionsCount,
-        numberOfTransactionsPerPage
-    } = data;
-
     function goToPage(targetPageIndex = 0) {
         // Clamp it
-        refreshTheTable(Math.min(Math.max(targetPageIndex, 0), totalTransactionsCount));
+        refreshTheTable(Math.min(Math.max(targetPageIndex, 0), data.totalTransactionsCount));
     }
 
     function refreshTheTable(startFromTransactionIndex = 0) {
@@ -36,10 +30,8 @@
                     console.log('+page.svelte #39 > refreshTheTable() > result', result);
                     isLoaded = true;
 
-                    startFromTransactionIndex = result.startFromTransactionIndex;
-                    totalTransactionsCount = result.totalTransactionsCount;
-                    numberOfTransactionsPerPage = result.numberOfTransactionsPerPage;
-                    listOfTransactions = result.listOfTransactions;
+                    data = result;
+                    listOfTransactions = result.listOfTransactions
 
                     error = '';
                 },
@@ -81,11 +73,11 @@
         </table>
 
         <ul id="controls">
-            <li id="page-counter">{totalTransactionsCount} transactions</li>
+            <li id="page-counter">{data.totalTransactionsCount} transactions</li>
             <li><button on:click={() => goToPage(0)}>|&lt;</button></li>
-            <li><button on:click={() => goToPage(startFromTransactionIndex - numberOfTransactionsPerPage)}>&lt;</button></li>
-            <li><button on:click={() => goToPage(startFromTransactionIndex + numberOfTransactionsPerPage)}>&gt;</button></li>
-            <li><button on:click={() => goToPage(totalTransactionsCount - numberOfTransactionsPerPage)}>&gt;|</button></li>
+            <li><button on:click={() => goToPage(data.startFromTransactionIndex - data.numberOfTransactionsPerPage)}>&lt;</button></li>
+            <li><button on:click={() => goToPage(data.startFromTransactionIndex + data.numberOfTransactionsPerPage)}>&gt;</button></li>
+            <li><button on:click={() => goToPage(data.totalTransactionsCount - data.numberOfTransactionsPerPage)}>&gt;|</button></li>
         </ul>
     {/if}
 </div>
