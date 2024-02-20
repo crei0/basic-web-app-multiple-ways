@@ -12,7 +12,6 @@ function Dashboard() {
     const [isLoaded, setIsLoaded] = React.useState(false);
     const [data, setData] = React.useState(initialData);
 
-
     React.useEffect(
         () => {
             fetch(API_PATH.DASHBOARD)
@@ -34,20 +33,18 @@ function Dashboard() {
         return <div>Error: {error}</div>;
     } else if (!isLoaded) {
         return <div>Loading...</div>;
-    } else {
-        if (data) {
-            return (
+    } else if (data) {
+        return (
+            <div id="dashboard">
+                <h1>Dashboard</h1>
+
                 <div>
-                    <h1>Dashboard</h1>
-
-                    <div>
-                        <div>Total transactions count:</div>
-                        <div>{data.totalTransactionsCount}</div>
-                    </div>
+                    <div>Total transactions count:</div>
+                    <div>{data.totalTransactionsCount}</div>
                 </div>
-            );
-        }
-
+            </div>
+        );
+    } else {
         return (
             <div>Dashboard data couldn't be loaded</div>
         );

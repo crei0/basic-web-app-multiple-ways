@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
     
-    import { API_PATH } from '../../lib/utilities/constants';
+    import { PATH, API_PATH } from '../../lib/utilities/constants';
     import DisplayTransactionState from '../../lib/partials/DisplayTransactionState.svelte';
 
     let isLoaded = false;
@@ -27,7 +27,6 @@
             .then(res => res.json())
             .then(
                 (result) => {
-                    console.log('+page.svelte #39 > refreshTheTable() > result', result);
                     isLoaded = true;
 
                     data = result;
@@ -49,9 +48,9 @@
 
 <div>
     {#if error}
-        <div>Error: {error}</div>;
+        <div>Error: {error}</div>
     {:else if !isLoaded}
-        <div>Loading...</div>;
+        <div>Loading...</div>
     {:else}
         <table>
             <thead>
@@ -64,7 +63,7 @@
             <tbody>
                 {#each listOfTransactions as transaction}
                     <tr>
-                        <td><a href={transaction.id}>{transaction.id}</a></td>
+                        <td><a href={PATH.TRANSACTIONS + '/' + transaction.id}>{transaction.id}</a></td>
                         <td><DisplayTransactionState state={transaction.state} /></td>
                         <td class='col-aligned-right'>{transaction.amount} &euro;</td>
                     </tr>

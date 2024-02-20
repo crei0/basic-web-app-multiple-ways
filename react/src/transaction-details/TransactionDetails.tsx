@@ -27,28 +27,32 @@ function TransactionsDetails() {
     React.useEffect(
         () => {
             if (!urlParams?.transactionId) {
-                navigate(PATH.TRANSACTIONS)
+                navigate(PATH.TRANSACTIONS);
+            } else {
+                fetch(API_PATH.TRANSACTION_DETAILS + '/' + urlParams?.transactionId)
+                    .then(res => res.json())
+                    .then(
+                        (result) => {
+                            setIsLoaded(true);
+                            setData(result);
+                        },
+                        (error) => {
+                            setIsLoaded(true);
+                            setError(error.message);
+                        }
+                    )
             }
-
-            fetch(API_PATH.TRANSACTION_DETAILS + '/' + urlParams?.transactionId)
-                .then(res => res.json())
-                .then(
-                    (result) => {
-                        setIsLoaded(true);
-                        setData(result);
-                    },
-                    (error) => {
-                        setIsLoaded(true);
-                        setError(error.message);
-                    }
-                )
         }, []
     );
 
     if (error) {
-        return <div>Error: {error}</div>;
+        return (
+            <div>Error: {error}</div>
+        );
     } else if (!isLoaded) {
-        return <div>Loading...</div>;
+        return (
+            <div>Loading...</div>
+        );
     } else {
         if (data) {
             return (
